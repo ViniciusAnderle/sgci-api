@@ -13,7 +13,6 @@ import jakarta.validation.constraints.Size;
 @Table(name = "ENDERECO")
 public class Endereco {
 
-	@NotNull
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID_ENDERECO")
@@ -36,7 +35,7 @@ public class Endereco {
 	@Size(max = 255)
 	@Column(name = "RUA")
 	private String rua;
-	
+
 	@Size(max = 255)
 	@Column(name = "BAIRRO")
 	private String bairro;
@@ -44,12 +43,17 @@ public class Endereco {
 	@Column(name = "NUMERO")
 	private Integer numero;
 
+	public Endereco() {
+		super();
+	}
+
 	public Endereco(@Size(max = 8) String cep, @Size(max = 255) String estado, @Size(max = 255) String cidade,
-			@Size(max = 255) String bairro, Integer numero) {
+			@Size(max = 255) String rua, @Size(max = 255) String bairro, Integer numero) {
 		super();
 		this.cep = cep;
 		this.estado = estado;
 		this.cidade = cidade;
+		this.rua = rua;
 		this.bairro = bairro;
 		this.numero = numero;
 	}

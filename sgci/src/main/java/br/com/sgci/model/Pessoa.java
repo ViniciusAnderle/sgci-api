@@ -1,5 +1,6 @@
 package br.com.sgci.model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -17,14 +18,13 @@ import jakarta.validation.constraints.Size;
 @Table(name = "PESSOA")
 public class Pessoa {
 
-	@NotNull
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID_PESSOA")
 	private Long id;
 
 	@NotNull
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "ID_ENDERECO")
 	private Endereco endereco;
 
@@ -52,6 +52,10 @@ public class Pessoa {
 	@Enumerated(EnumType.STRING)
 	@Column(name = "EN_ESTADO_CIVIL")
 	private EstadoCivilEnum estadoCivil;
+
+	public Pessoa() {
+		super();
+	}
 
 	public Pessoa(@NotNull Endereco endereco, @NotNull @Size(max = 255) String nome, @NotNull TipoPessoaEnum tipo,
 			@NotNull @Size(max = 255) String documento, @NotNull @Size(max = 255) String profissao,
