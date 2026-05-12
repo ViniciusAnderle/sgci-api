@@ -98,6 +98,14 @@ public class Endereco {
 		this.bairro = bairro;
 	}
 
+	public String getRua() {
+		return rua;
+	}
+
+	public void setRua(String rua) {
+		this.rua = rua;
+	}
+
 	public Integer getNumero() {
 		return numero;
 	}

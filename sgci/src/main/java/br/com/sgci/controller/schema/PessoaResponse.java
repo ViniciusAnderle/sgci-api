@@ -2,26 +2,14 @@ package br.com.sgci.controller.schema;
 
 import br.com.sgci.model.EstadoCivilEnum;
 import br.com.sgci.model.TipoPessoaEnum;
-import jakarta.validation.constraints.NotNull;
 
-public record PessoaReq(
-		
-		@NotNull
+public record PessoaResponse(
+
 		String nome,
-		
-		@NotNull
-		EnderecoReq endereco,
-		
-		@NotNull
+		EnderecoResponse endereco,
 		TipoPessoaEnum tipo,
-		
-		@NotNull
 		String documento,
-		
-		@NotNull
-		String profissao,
-		
-		@NotNull
+		String profissao, 
 		EstadoCivilEnum estadoCivil) {
 
 }

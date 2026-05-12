@@ -4,7 +4,7 @@ import br.com.sgci.model.EstadoCivilEnum;
 import br.com.sgci.model.TipoPessoaEnum;
 import jakarta.validation.constraints.NotNull;
 
-public record PessoaReq(
+public record PessoaUpd(
 		
 		@NotNull
 		String nome,
