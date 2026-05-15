@@ -10,7 +10,7 @@ public record PessoaUpd(
 		String nome,
 		
 		@NotNull
-		EnderecoReq endereco,
+		EnderecoUpd endereco,
 		
 		@NotNull
 		TipoPessoaEnum tipo,
@@ -24,4 +24,5 @@ public record PessoaUpd(
 		@NotNull
 		EstadoCivilEnum estadoCivil) {
 
+		
 }
